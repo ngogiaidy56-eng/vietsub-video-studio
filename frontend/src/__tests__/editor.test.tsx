@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {injectTransitionFrames} from '../utils/frameInjector';describe('editor core',()=>{it('injects only long subtitle gaps',()=>expect(injectTransitionFrames([{startMs:0,endMs:1000},{startMs:3000,endMs:4000}])).toHaveLength(1))});

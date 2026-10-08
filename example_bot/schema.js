@@ -1,0 +1,1 @@
+export const commands=['/start','/status','/app','/admin','/maintenance'];export function menu(appUrl){return {inline_keyboard:[[{text:'🚀 Mở Mini App',web_app:{url:appUrl}}],[{text:'📥 Tải App',callback_data:'downloads'}]]}};

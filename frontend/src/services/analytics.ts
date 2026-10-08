@@ -1,0 +1,1 @@
+import posthog from 'posthog-js';let ready=false;export function initAnalytics(){const key=import.meta.env.VITE_POSTHOG_KEY; if(key){posthog.init(key,{api_host:import.meta.env.VITE_POSTHOG_HOST||'https://us.i.posthog.com',capture_pageview:false});ready=true;}}export function track(event:string,properties?:Record<string,unknown>){if(ready)posthog.capture(event,properties);}

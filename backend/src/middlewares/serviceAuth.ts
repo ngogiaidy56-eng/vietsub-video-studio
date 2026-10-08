@@ -1,0 +1,2 @@
+import type {Request,Response,NextFunction} from 'express';import {verifyServiceSignature} from '../services/auth.js';import {env} from '../config.js';
+export function requireEdgeAuth(req:Request,res:Response,next:NextFunction){const raw=JSON.stringify(req.body??{});if(!verifyServiceSignature(raw,req.header('x-edge-signature'),env.EDGE_SHARED_SECRET))return res.status(401).json({error:'invalid_edge_signature'});next()}

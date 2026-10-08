@@ -1,0 +1,4 @@
+import crypto from 'node:crypto';
+export function signServicePayload(payload:string,secret:string,ts=Date.now()){const tsText=String(ts);const sig=crypto.createHmac('sha256',secret).update(`${tsText}.${payload}`).digest('hex');return `${tsText}.${sig}`}
+export function verifyServiceSignature(payload:string,header:string|undefined,secret:string,maxSkewMs=300_000){if(!header)return false;const [ts,sig]=header.split('.');const n=Number(ts);if(!Number.isFinite(n)||Math.abs(Date.now()-n)>maxSkewMs||!sig)return false;const expected=crypto.createHmac('sha256',secret).update(`${ts}.${payload}`).digest('hex');const a=Buffer.from(expected),b=Buffer.from(sig);return a.length===b.length&&crypto.timingSafeEqual(a,b)}
+export function sha256(input:string){return crypto.createHash('sha256').update(input).digest('hex')}

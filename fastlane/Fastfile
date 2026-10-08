@@ -1,0 +1,31 @@
+def gradle!(task)
+  sh("./gradlew #{task} --no-daemon")
+end
+
+platform :android do
+  desc "Build signed Android App Bundle"
+  lane :build_android do
+    gradle!(":androidApp:bundleRelease")
+  end
+
+  desc "Build and publish to Google Play when Play credentials are configured"
+  lane :deploy_playstore do
+    build_android
+    upload_to_play_store(
+      track: ENV.fetch("PLAY_STORE_TRACK", "internal"),
+      aab: Dir["androidApp/build/outputs/bundle/release/*.aab"].first,
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true
+    )
+  end
+end
+
+platform :ios do
+  desc "Sync signing and archive iOS app"
+  lane :release do
+    match(type: "appstore", readonly: true, git_url: ENV.fetch("MATCH_GIT_URL"))
+    gradle!(":composeApp:linkReleaseFrameworkIosArm64")
+    UI.message("iOS framework built. Xcode archive/export is performed by the app workspace in the consuming iOS shell project.")
+  end
+end

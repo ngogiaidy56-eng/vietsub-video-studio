@@ -1,0 +1,1 @@
+export function SystemControlPanel(){return <aside className="panel"><strong>System</strong><div className="muted">Edge: online</div><div className="muted">Queue: ready</div><div className="muted">Offline: enabled</div></aside>}

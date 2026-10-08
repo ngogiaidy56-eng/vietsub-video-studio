@@ -1,0 +1,1 @@
+export const telegram=(window as any).Telegram?.WebApp;export function initTelegram(){telegram?.ready?.();telegram?.expand?.();return telegram}export function initData(){return telegram?.initData||''}

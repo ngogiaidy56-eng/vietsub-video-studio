@@ -1,0 +1,1 @@
+import {Router} from 'express';import {redis} from '../services/redis.js';export const adminRouter=Router();adminRouter.get('/metrics',async(_req,res)=>res.json({queue:await redis.llen('bull:vietsub-media:wait'),redisStatus:(redis as any).status}));

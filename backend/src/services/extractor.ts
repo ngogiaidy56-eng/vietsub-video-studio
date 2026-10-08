@@ -1,0 +1,3 @@
+export type ExtractedSubtitle={id:string;start:string;end:string;text:string};
+export function parseSrt(input:string):ExtractedSubtitle[]{const blocks=input.replaceAll("\r\n","\n").trim().split(/\n\s*\n/);return blocks.map((b,i)=>{const lines=b.split("\n");const ti=lines.findIndex(x=>x.includes("-->"));const [start,end]=(lines[ti]??"").split("-->").map(x=>x.trim());return{id:lines[0]??String(i+1),start:start??"00:00:00,000",end:end??"00:00:01,000",text:lines.slice(ti+1).join(" ").trim()}}).filter(x=>x.text)}
+export async function extractFromUrl(url:string):Promise<ExtractedSubtitle[]>{const r=await fetch(url,{redirect:"follow"});if(!r.ok)throw new Error(`subtitle_fetch_${r.status}`);const text=await r.text();return text.includes("-->")?parseSrt(text):[];}

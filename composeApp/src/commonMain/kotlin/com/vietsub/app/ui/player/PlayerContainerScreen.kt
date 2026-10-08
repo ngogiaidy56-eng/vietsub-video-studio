@@ -1,0 +1,7 @@
+package com.vietsub.app.ui.player
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+@Composable fun PlayerContainerScreen(videoUrl: String? = null) { NativeVideoPlayer(videoUrl, Modifier.fillMaxWidth().height(240.dp)) }

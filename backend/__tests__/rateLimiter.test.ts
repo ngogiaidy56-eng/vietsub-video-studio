@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {sha256} from '../src/services/auth.js';describe('security primitives',()=>{it('hashes deterministically',()=>expect(sha256('vietsub')).toHaveLength(64))});

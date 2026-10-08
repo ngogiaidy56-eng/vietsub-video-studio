@@ -1,0 +1,13 @@
+{
+  "name": "@vietsub/compose-app",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "vite": "^7.1.9"
+  }
+}

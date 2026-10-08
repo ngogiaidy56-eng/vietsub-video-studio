@@ -1,0 +1,1 @@
+import {useEffect} from 'react';import {Editor} from './components/Editor';import {initAnalytics} from './services/analytics';export default function App(){useEffect(()=>{initAnalytics();navigator.serviceWorker?.register('/sw.js').catch(()=>{})},[]);return <Editor/>}

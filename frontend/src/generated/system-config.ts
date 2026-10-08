@@ -1,0 +1,1 @@
+export const SYSTEM_CONFIG={version:'3.0.0',features:{ffmpegWasm:true,offlineFirst:true,i18n:true,analytics:true,payments:true,telegram:true,aiTranslation:true,aiStt:true,ocr:true}} as const;

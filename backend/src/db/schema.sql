@@ -1,0 +1,2 @@
+CREATE TABLE IF NOT EXISTS media_jobs (id UUID PRIMARY KEY, user_id TEXT NOT NULL, project_id TEXT, type TEXT NOT NULL, status TEXT NOT NULL, progress INTEGER NOT NULL DEFAULT 0, payload JSONB NOT NULL, result JSONB, error TEXT, created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(), updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW());
+CREATE INDEX IF NOT EXISTS idx_media_jobs_user ON media_jobs(user_id, created_at DESC);
