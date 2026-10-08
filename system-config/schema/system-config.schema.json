@@ -1,0 +1,9 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "type":"object","required":["version","product","network","urls","features"],
+  "properties":{
+    "version":{"type":"string"},"product":{"type":"object"},"network":{"type":"object"},"urls":{"type":"object"},
+    "features":{"type":"object","additionalProperties":{"type":"boolean"}},"limits":{"type":"object"},
+    "ai":{"type":"object"},"storage":{"type":"object"},"analytics":{"type":"object"},"locales":{"type":"array","items":{"type":"string"}}
+  }
+}

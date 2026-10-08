@@ -1,0 +1,1 @@
+import fs from 'node:fs/promises';export async function patchJson(file:string,patch:Record<string,unknown>){const current=JSON.parse(await fs.readFile(file,'utf8'));const next={...current,...patch};await fs.writeFile(file,JSON.stringify(next,null,2)+'\n');return next}

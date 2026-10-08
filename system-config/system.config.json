@@ -1,0 +1,19 @@
+{
+  "version": "3.0.0",
+  "product": {"name":"Vietsub Video Studio","slug":"vietsub-video-studio","title":"Vietsub Pro"},
+  "network": {"apiPort":8787,"frontendPort":5173,"edgePort":8788,"wsPath":"/ws"},
+  "urls": {"apiBase":"http://localhost:8787","edgeBase":"http://localhost:8788","frontendBase":"http://localhost:5173"},
+  "features": {
+    "ffmpegWasm": true, "offlineFirst": true, "i18n": true, "analytics": true,
+    "payments": true, "telegram": true, "aiTranslation": true, "aiStt": true,
+    "ocr": true, "queue": true, "edgeAuth": true, "d1": true, "kv": true,
+    "r2": true, "pwa": true, "smartMerge": true, "audioMixer": true,
+    "autoPatch": true
+  },
+  "limits": {"uploadMb":2048,"maxProjectDurationSec":7200,"rateLimitPerMinute":120,"maxConcurrentJobs":4},
+  "ai": {"model":"gemini-2.5-flash","temperature":0.2},
+  "storage": {"bucket":"vietsub-media","buildsBucket":"vietsub-builds"},
+  "analytics": {"provider":"posthog"},
+  "locales": ["vi","en","zh-CN","ja","ko"],
+  "managedFiles": ["package.json","frontend/index.html","frontend/public/manifest.json","worker/wrangler.jsonc"]
+}

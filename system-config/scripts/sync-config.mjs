@@ -1,0 +1,11 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+const root=process.cwd();
+const source=path.join(root,'config','sot.json');
+const sot=JSON.parse(await fs.readFile(source,'utf8'));
+await fs.mkdir(path.join(root,'frontend','src','generated'),{recursive:true});
+await fs.writeFile(path.join(root,'frontend','src','generated','system-config.ts'),`export const SYSTEM_CONFIG = ${JSON.stringify(sot,null,2)} as const;\n`);
+await fs.writeFile(path.join(root,'frontend','src','generated','system-theme.css'),`:root{--vs-bg:#111114;--vs-panel:#18181c;--vs-panel2:#222228;--vs-border:#303038;--vs-text:#f5f5f7;--vs-muted:#9898a6;--vs-accent:#7c5cff;--vs-success:#43d17c;}`);
+const html=await fs.readFile(path.join(root,'frontend','index.html'),'utf8');
+await fs.writeFile(path.join(root,'frontend','index.html'),html.replace(/<title>.*?<\/title>/s,`<title>${sot.product.title}</title>`));
+console.log('SOT synchronized', sot.version);

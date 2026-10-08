@@ -1,0 +1,1 @@
+export async function upsertEvent(db:D1Database,id:string,type:string,payload:unknown){await db.prepare('INSERT OR REPLACE INTO events(id,type,payload,created_at) VALUES(?,?,?,CURRENT_TIMESTAMP)').bind(id,type,JSON.stringify(payload)).run()}

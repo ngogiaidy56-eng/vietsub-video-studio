@@ -1,0 +1,1 @@
+{"name":"@vietsub/edge-worker","version":"3.0.0","private":true,"type":"module","scripts":{"dev":"wrangler dev --local --port 8788","build":"wrangler deploy --dry-run","deploy":"wrangler deploy"},"devDependencies":{"wrangler":"^4.45.0","@cloudflare/workers-types":"^4.20260901.0","typescript":"^7.0.2","vitest":"^3.2.4"}}

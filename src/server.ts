@@ -1,0 +1,1 @@
+import http from 'node:http';const port=8799;http.createServer((_req,res)=>{res.writeHead(200,{'content-type':'application/json'});res.end(JSON.stringify({ok:true,service:'sot-sandbox',version:'3.0.0'}))}).listen(port);
