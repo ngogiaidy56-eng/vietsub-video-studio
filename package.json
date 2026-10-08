@@ -1,0 +1,35 @@
+{
+  "name": "vietsub-video-studio",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "workspaces": ["backend", "frontend", "worker", "example_bot"],
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:backend dev:frontend dev:edge",
+    "dev:backend": "npm --workspace backend run dev",
+    "dev:frontend": "npm --workspace frontend run dev",
+    "dev:edge": "npm --workspace worker run dev",
+    "build": "npm-run-all build:*",
+    "build:backend": "npm --workspace backend run build",
+    "build:frontend": "npm --workspace frontend run build",
+    "build:edge": "npm --workspace worker run build",
+    "test": "npm-run-all test:*",
+    "test:backend": "npm --workspace backend run test",
+    "test:frontend": "npm --workspace frontend run test",
+    "test:e2e": "npm --workspace frontend run test:e2e",
+    "lint": "npm-run-all lint:*",
+    "lint:backend": "npm --workspace backend run lint",
+    "lint:frontend": "npm --workspace frontend run lint",
+    "release": "semantic-release"
+  },
+  "devDependencies": {
+    "npm-run-all2": "^8.0.4",
+    "semantic-release": "^24.2.7",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/release-notes-generator": "^14.1.0",
+    "@semantic-release/npm": "^12.0.2",
+    "@semantic-release/github": "^11.0.6"
+  }
+}
