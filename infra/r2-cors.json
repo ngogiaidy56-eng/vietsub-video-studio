@@ -1,0 +1,9 @@
+[
+  {
+    "AllowedOrigins": ["https://studio.example.com", "https://t.me"],
+    "AllowedMethods": ["GET", "PUT", "HEAD"],
+    "AllowedHeaders": ["*"],
+    "ExposeHeaders": ["ETag"],
+    "MaxAgeSeconds": 3600
+  }
+]

@@ -1,0 +1,59 @@
+[versions]
+kotlin = "2.4.20"
+compose = "1.12.0"
+ktor = "3.6.0"
+kotlinxSerialization = "1.9.0"
+kotlinxCoroutines = "1.10.2"
+androidGradlePlugin = "9.3.1"
+androidCompileSdk = "37"
+androidMinSdk = "26"
+androidTargetSdk = "37"
+koin = "4.1.1"
+exposed = "0.61.0"
+h2 = "2.3.232"
+postgres = "42.7.7"
+hikari = "7.0.2"
+lettuce = "7.8.0.RELEASE"
+awsSdk = "2.42.3"
+logback = "1.5.19"
+java = "17"
+exoplayer = "1.8.0"
+
+[plugins]
+androidKmpLibrary = { id = "com.android.kotlin.multiplatform.library", version.ref = "androidGradlePlugin" }
+
+[libraries]
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
+serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
+
+ktor-server-core = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
+ktor-server-netty = { module = "io.ktor:ktor-server-netty-jvm", version.ref = "ktor" }
+ktor-server-content-neg = { module = "io.ktor:ktor-server-content-negotiation-jvm", version.ref = "ktor" }
+ktor-server-cors = { module = "io.ktor:ktor-server-cors-jvm", version.ref = "ktor" }
+ktor-server-websockets = { module = "io.ktor:ktor-server-websockets-jvm", version.ref = "ktor" }
+ktor-server-call-logging = { module = "io.ktor:ktor-server-call-logging-jvm", version.ref = "ktor" }
+ktor-server-status = { module = "io.ktor:ktor-server-status-pages-jvm", version.ref = "ktor" }
+ktor-server-auth = { module = "io.ktor:ktor-server-auth-jvm", version.ref = "ktor" }
+ktor-server-test = { module = "io.ktor:ktor-server-test-host-jvm", version.ref = "ktor" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio-jvm", version.ref = "ktor" }
+ktor-client-content-neg = { module = "io.ktor:ktor-client-content-negotiation-jvm", version.ref = "ktor" }
+ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
+
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+koin-ktor = { module = "io.insert-koin:koin-ktor", version.ref = "koin" }
+exposed-core = { module = "org.jetbrains.exposed:exposed-core", version.ref = "exposed" }
+exposed-jdbc = { module = "org.jetbrains.exposed:exposed-jdbc", version.ref = "exposed" }
+h2 = { module = "com.h2database:h2", version.ref = "h2" }
+postgres = { module = "org.postgresql:postgresql", version.ref = "postgres" }
+hikari = { module = "com.zaxxer:HikariCP", version.ref = "hikari" }
+lettuce = { module = "io.lettuce:lettuce-core", version.ref = "lettuce" }
+aws-s3 = { module = "software.amazon.awssdk:s3", version.ref = "awsSdk" }
+aws-s3-presigner = { module = "software.amazon.awssdk:s3-presigner", version.ref = "awsSdk" }
+logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+
+exoplayer = { module = "androidx.media3:media3-exoplayer", version.ref = "exoplayer" }
+exoplayer-ui = { module = "androidx.media3:media3-ui", version.ref = "exoplayer" }
+ktor-client-js = { module = "io.ktor:ktor-client-js", version.ref = "ktor" }

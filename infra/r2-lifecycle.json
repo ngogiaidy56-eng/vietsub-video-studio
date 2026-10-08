@@ -1,0 +1,16 @@
+{
+  "rules": [
+    {
+      "id": "cleanup-failed-uploads",
+      "status": "Enabled",
+      "filter": {"prefix": "uploads/"},
+      "expiration": {"days": 7}
+    },
+    {
+      "id": "cleanup-temporary-renders",
+      "status": "Enabled",
+      "filter": {"prefix": "tmp/"},
+      "expiration": {"days": 1}
+    }
+  ]
+}

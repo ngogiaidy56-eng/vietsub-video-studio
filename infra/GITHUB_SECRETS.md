@@ -1,0 +1,24 @@
+# GitHub Secrets
+
+## Cloudflare
+
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
+- `CLOUDFLARE_PAGES_PROJECT`
+
+## Android signing
+
+- `ANDROID_KEYSTORE_B64`
+- `ANDROID_KEYSTORE_PASSWORD`
+- `ANDROID_KEY_ALIAS`
+- `ANDROID_KEY_PASSWORD`
+
+## iOS / Fastlane Match
+
+- `MATCH_GIT_URL`
+- `MATCH_PASSWORD`
+- `APPLE_ID`
+- `APPLE_TEAM_ID`
+- `IOS_BUNDLE_ID`
+
+Never commit any of these values to Git.
